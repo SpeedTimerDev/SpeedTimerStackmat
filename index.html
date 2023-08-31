@@ -1,36 +1,19 @@
 <html>
-
 <head lang="en">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SpeedTimer</title>
-	<meta name="description"
-		content="A Cubing Timer Designed to be Simple and Modern. Includes Tons of Customisation, Algorithms, and Organises your Solves Neatly.">
-	<meta name="title" content="SpeedTimer - Cubing Timer">
+	<title>SpeedTimer Stackmat</title>
 	<meta name="keywords" content="cubing, timer, cubetimer, cstimer">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="navbar.css">
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="visualiser.css">
-	<link rel="stylesheet" href="cubeimage.css">
-	<link rel="stylesheet" href="media.css">
-	<script src="navbar.js" async></script>
 	<script src="stackmat.js" async></script>
-	<link rel="stylesheet" href="cubeslist.css">
 	<link rel="icon" href="logo1.jpg">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
 		integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 
 <body>
-	<div class="dataStore" style="display:none">
-		stuff
-	</div>
-	<input id="copyStore" style="position: absolute; left: -55555px;" type="text">
-
-	<div class="leftT"></div>
-
-	<div class="overlay" id="overlay3" style="display: none;"></div>
+	<!-- <div class="overlay" id="overlay3" style="display: none;"></div>
 	<div class="stackmatCheck" style="display: none;">
 		<div class="stackmatMsg">Would You Like to Connect Your Stackmat?</div>
 		<div class="stackmatCap">
@@ -42,116 +25,12 @@
 			<button class="btnYesStack">Yes</button>
 			<button class="btnNoStack">No</button>
 		</div>
+	</div> -->
+
+	<div class="stopwatch">
+		<button disabled="disabled" class="digits">00:00.00</button>
 	</div>
 
-	<div class="rightT">
-		<div class="copied">
-			<p>Copied!</p>
-		</div>
-		<div class="overlay" style="display: none;">
-		</div>
-		<div class="creditpopup" style="display: none;">
-			<!-- <a href='https://writingmasterthesis.com/'>https://writingmasterthesis.com/</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=0f5f8532571239cf04afa8e976210d4c75f18e3d'></script>
-			<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/835531/t/7"></script> -->
-			<!-- <script type="text/javascript" src="//counter.websiteout.net/js/5/0/0/1"></script></div> -->
-			<div style="font-size: 200%; text-align: center;">SpeedTimer</div>
-			<br>
-			Bored of using other timers with their appaling design and lack of simplicity? Me too. Instead of
-			waiting for a new timer to come out, I decided to create my own free timer to combat this. And as a Cuber
-			Myself, I won't let you down. Use The SpaceBar to start and stop the timer, and play around with settings
-			and cube types. Happy Cubing!
-			<br>
-			<br>
-			- CoderGuru
-			<br>
-			<br>
-			<br>
-			For suggestions, use <a href="https://app.suggestionox.com/r/speedtimer" target="_blank"
-				style="color: whitesmoke;">This Link</a>.
-			<br>
-			<br>
-			For Other Queries, Contact <a href="mailto:contactspeedtimer@gmail.com" target="_blank"
-				style="color: whitesmoke;">contactspeedtimer@gmail.com</a>
-			<br>
-			<br>
-			<br>
-			Alt + 2: +2 Most Recent Solve<br>
-			Alt + d: DNF Most Recent Solve<br>
-			Alt + z: Delete Most Recent Solve<br>
-			<br>
-			Use The Buttons at The Top Right to Change Scramble or Change to Manual Entry Mode.
-		</div>
-		<div class="overlay" id="overlay2" style="display: none;"></div>
-		<div class="solveInfo" style="display: none;">
-			<div class="solveInfoTime">19.56</div>
-			<br>
-			<div class="solveInfoType">3x3</div>
-			<br>
-			<div class="solveInfoPreview"></div>
-			<br>
-			<div class="solveInfoScramble">B2 U F2 D2 R2 F2 R2 U' L2 D2 B L' U2 B L2 F2 D' U' B'</div>
-			<br>
-			<div class="solveInfoShare"><span>Share Time <span id = "stroke"><i class="fas fa-link"></i></span></span></div>
-			<div class="solveInfoClose"><i class="fas fa-times"></i></div>
-		</div>
-		<div class="stopwatch">
-			<div class="sHold">
-				<div class="scramble"></div>
-				<div class="iconWrapper" id="iconRow">
-					<div class="copyScram"><i class="fas fa-copy"></i></i></div>
-					<div class="refreshScram"><i class="fas fa-sync-alt"></i></div>
-					<div class="type"><i class="fas fa-keyboard"></i></div>
-					<!-- <div class="scrambleType"> -->
-					<select class="scrambleDrop">
-						<option value="2x2">2x2</option>
-						<option value="3x3">3x3</option>
-						<option value="4x4">4x4</option>
-						<option value="5x5">5x5</option>
-						<option value="6x6">6x6</option>
-						<option value="7x7">7x7</option>
-						<option value="Megaminx">Megaminx</option>
-			<button disabled="disabled" class="digits">00:00.00</button>
-			<input class="inputTime" style="display: none; outline: none;">
-		</div>
-		<div class="info">
-			<div class="solves">
-			</div>
-			<div class="timerStats">
-				<div class="best">
-					<div class="bestCaption">Best:</div>
-					<div class="bestTime">-</div>
-				</div>
-				<div class="item">
-					<div class="caption">Avg:</div>
-					<div class="valTime" id="avg">-</div>
-				</div>
-				<div class="item">
-					<div class="caption">Least:</div>
-					<div class="valTime" id="worst">-</div>
-				</div>
-				<div class="item">
-					<div class="caption">Ao5:</div>
-					<div class="valTime" id="ao5">-</div>
-				</div>
-				<div class="item">
-					<div class="caption">Ao12:</div>
-					<div class="valTime" id="ao12">-</div>
-				</div>
-				<div class="item">
-					<div class="caption">Ao100:</div>
-					<div class="valTime" id="ao100">-</div>
-				</div>
-				<div class="item">
-					<div class="caption">Range:</div>
-					<div class="valTime" id="range">-</div>
-				</div>
-			</div>
-			<div class="scrambleShow">
-			</div>
-		</div>
-	</div>
-
-	<script src="defaults.js" async defer></script>
-	<script src="script.js" type = "module" async defer></script>
+	<script src="script.js" async defer></script>
 </body>
 </html>

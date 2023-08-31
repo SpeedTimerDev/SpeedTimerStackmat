@@ -1,1 +1,146 @@
-/* style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--midBlack);
+
+    /* Variables */
+
+    --font-colour: whitesmoke;
+    --black: #151515;
+    --midBlack: #222;
+    --lightBlack: rgb(24, 24, 24);
+    --blue: #0F3460;
+    --buttonbg: rgb(50, 50, 50);
+    --animDuration: 0s;
+    --bradiusSmall: 5px;
+    --bradius: 10px;
+}
+
+.stopwatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: inline-block;
+}
+
+button.digits {
+    background: transparent;
+    border: none;
+    width: 100%;
+    height: 60%;
+
+    font-size: 8vw;
+
+    outline: none;
+
+    color: var(--font-colour);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: default;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.digits::-moz-selection {
+    background-color: transparent;
+}
+
+.digits::selection {
+    background-color: transparent;
+}
+
+.sHold {
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Stackmat CSS */
+
+.stackmatCheck {
+    position: absolute;
+
+    width: 50vw;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 901;
+
+    background-color: rgb(40, 40, 40);
+
+    justify-content: center;
+}
+
+.stackmatMsg {
+    color: whitesmoke;
+    text-align: center;
+
+    font-size: 30px;
+}
+
+.stackmatCap {
+    color: whitesmoke;
+    text-align: center;
+
+    margin-top: 5px;
+
+    font-size: 16px;
+}
+
+.stackmatBtns {
+    margin-top: 50px;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btnYesStack, .btnNoStack {
+    padding: 15px;
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+    outline: none;
+
+    font-size: 110%;
+
+    color: whitesmoke;
+
+    border: none;
+
+    background-color: var(--blue);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
